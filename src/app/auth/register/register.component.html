@@ -1,0 +1,68 @@
+<h4 class="fw-600 text-center"> Register</h4>
+<div class="text-center">
+  <ng-content></ng-content>
+</div>
+
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="form-floating mb-3">
+    <label for="your_name">Your names </label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fa-solid fa-user"></i></span>
+      <input type="text" formControlName="name"
+             class="form-control"
+             id="your_name"
+             placeholder="your names"
+            [ngClass]="{'is-invalid':isSubmitted && control['name'].invalid}"
+      />
+    </div>
+    <div class="text-danger" *ngIf="isSubmitted && control['name'].invalid">
+      <div *ngIf="control['name']?.errors?.['required']">Your names are required!</div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="phone_number">Phone Number </label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fa-solid fa-phone"></i></span>
+      <input type="text" class="form-control" formControlName="phoneNumber" id="phone_number" placeholder="07&times;&times; &times;&times;&times; &times;&times;&times;">
+    </div>
+    <div class="text-danger"></div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email">Email address </label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fa-solid fa-envelope"></i></span>
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Your email">
+    </div>
+    <div class="text-danger"></div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="password">Password </label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fa-solid fa-key"></i></span>
+      <input type="password" class="form-control" formControlName="password" id="password" placeholder="******">
+    </div>
+    <div class="text-danger"></div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="confirm_password">Confirm Password </label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fa-solid fa-key"></i></span>
+      <input type="password" class="form-control" formControlName="confirmPassword" id="confirm_password" placeholder="******">
+    </div>
+    <div class="text-danger"></div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-sm btn-primary w-100">Register</button>
+  </div>
+
+</form>

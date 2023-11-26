@@ -1,0 +1,52 @@
+<section class="full-screen">
+  <div class="row">
+
+    <!-- Auth Markup section -->
+    <div class="col-sm-7 has-ui">
+      <div class="center-div">
+        <h2 class="app-title">{{appTitle}}</h2>
+        <div class="card auth-card">
+          <div class="card-body pb-2">
+            <!-- recover password section-->
+            <ng-container *ngIf="displayPasswordSection else loginRegisterSection">
+              <app-reset-password>
+                <span class="app-title-sm">{{appTitle}}</span>
+              </app-reset-password>
+            </ng-container>
+
+            <!-- Login and Register Section-->
+            <ng-template #loginRegisterSection>
+
+              <!-- Login Section -->
+              <ng-container *ngIf="displayLogin else showRegisterUi">
+                <app-login (resetPasswordEvt)="showResetPassword()">
+                  <span class="app-title-sm">{{appTitle}}</span>
+                </app-login>
+              </ng-container>
+
+              <!-- Register Section -->
+              <ng-template #showRegisterUi>
+                <app-register>
+                  <span class="app-title-sm">{{appTitle}}</span>
+                </app-register>
+              </ng-template>
+            </ng-template>
+
+          </div>
+          <div class="card-footer bg-white text-end p-3 pt-2">
+            <ng-container *ngIf="(displayLogin && !displayPasswordSection) else toggleLogin">
+              Don't have an account ? <button (click)="showRegister()" class="btn btn-sm btn-outline-primary">Register</button>
+            </ng-container>
+            <ng-template #toggleLogin>
+              Already have an account ? <button (click)="showLogin()" class="btn btn-sm btn-outline-primary">Login</button>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Image Section -->
+    <div class="col-sm-5 has-background"></div>
+
+  </div>
+</section>
+

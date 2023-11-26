@@ -1,0 +1,52 @@
+
+<h4 class="fw-600 text-center"> Login</h4>
+<div class="text-center">
+  <ng-content></ng-content>
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="form-group mb-3">
+    <label for="email">Email </label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fa-solid fa-user"></i>
+      </span>
+      <input type="email"
+             formControlName="email"
+             class="form-control"
+             id="email"
+             placeholder="Your email"
+             [ngClass]="{
+                'is-invalid':submitted && control['email'].invalid
+             }"
+      >
+    </div>
+    <div class="text-danger" *ngIf="submitted && control['email'].invalid">
+      <div *ngIf="control['email'].errors?.['required']">Email is required</div>
+      <div *ngIf="control['email'].errors?.['email']">Provide valid email</div>
+    </div>
+  </div>
+  <div class="form-group mb-3">
+    <label for="password">Password</label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="fa-solid fa-key"></i></span>
+      <input type="text"
+             formControlName="password"
+             class="form-control" id="password"
+             [ngClass]="{
+                'is-invalid':submitted && control['password'].invalid
+             }"
+             placeholder="******">
+    </div>
+    <div class="text-danger" *ngIf="submitted && control['password'].invalid">
+      <div *ngIf="control['password'].errors?.['required']">password is required</div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <button class="btn btn-sm btn-primary w-100">Login</button>
+  </div>
+</form>
+<div class=" text-end">
+  Forgotten password ? <a (click)="recoverPassword()" class="btn btn-sm fs-6 text-primary border-0">Recover password</a>
+</div>
