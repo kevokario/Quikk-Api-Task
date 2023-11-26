@@ -1,5 +1,5 @@
 export interface Account {
-  id:number,
-  userId:number,
+  id?:number,
+  userId?:number,
   amount:number
 }

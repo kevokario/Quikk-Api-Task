@@ -33,10 +33,13 @@
             "styles": [
               "src/styles.scss",
               "src/assets/css/coreui.min.css",
-              "src/assets/css/fontawesome.min.css"
+              "src/assets/vendors/simplebar/css/simplebar.css"
             ],
             "scripts": [
-              "src/assets/js/coreui.bundle.min.js"
+              "src/assets/js/coreui.bundle.min.js",
+              "src/assets/vendors/simplebar/js/simplebar.min.js",
+              "src/assets/vendors/@coreui/utils/js/coreui-utils.js",
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {

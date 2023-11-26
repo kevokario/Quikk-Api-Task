@@ -4,6 +4,8 @@ import {User} from "../../models/user";
 import {ToastrService} from "ngx-toastr";
 import {UserService} from "../../services/user.service";
 import {finalize, Subject, takeUntil} from "rxjs";
+import {AccountService} from "../../services/account.service";
+import {Account} from "../../models/account";
 
 @Component({
   selector: 'app-register',
@@ -23,7 +25,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder:FormBuilder,
     private toastr:ToastrService,
-    private userService:UserService
+    private userService:UserService,
+    private accountService:AccountService
     ) { }
 
   ngOnInit(): void {
@@ -115,13 +118,43 @@ export class RegisterComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
         finalize(()=>{this.isRegistering = false;})
       ).subscribe({
-      next:(()=>{
-        this.toastr.success("Account Created successfully, Login into your new account!","Registration Successful");
-        this.registerEvt.emit();
+      next:((user)=>{
+
+        this.getRegisteredUser(newUser);
       }),
       error:(()=>{
        this.userService.error();
       }),
+    });
+  }
+
+
+  getRegisteredUser(newUser:User){
+    const email = newUser.email;
+    this.userService.getUserByEmail(email).pipe(takeUntil(this.destroy$)).subscribe({
+      next:((user :Array<User>)=>{
+        if(user.length>0){
+          this.registerAccount(user[0]);
+        }
+      }), error:(()=>{
+        this.userService.error();
+      })
+    })
+  }
+
+  registerAccount(newUser:User){
+    const newUserAccount:Account = {
+      userId:newUser.id,
+      amount:0,
+    };
+
+    this.accountService.initUserAccount(newUserAccount).pipe(takeUntil(this.destroy$)).subscribe({
+      next:(res=>{
+        this.toastr.success("Account Created successfully, Login into your new account!","Registration Successful");
+        this.registerEvt.emit();
+      }), error:(()=>{
+        this.userService.error();
+      })
     });
   }
 

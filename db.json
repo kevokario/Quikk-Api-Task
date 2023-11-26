@@ -8,13 +8,36 @@
       "id": 1
     },
     {
-      "name": "Sean kario njeri",
+      "name": "Sean kario Njeri",
       "email": "seankario@gmail.com",
       "phone": "0704219247",
       "password": "12345",
       "id": 2
+    },
+    {
+      "name": "Collins",
+      "email": "collins@gmail.com",
+      "phone": "0704219247",
+      "password": "12345",
+      "id": 3
     }
   ],
-  "accounts": [],
+  "accounts": [
+    {
+      "userId": 1,
+      "amount": 0,
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "amount": 0,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "amount": 0,
+      "id": 3
+    }
+  ],
   "transactions": []
 }

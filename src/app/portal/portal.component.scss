@@ -1,0 +1,27 @@
+.show-sidebar{
+  margin-left: 256px;
+}
+
+.display-sidebar{
+  left:0 !important;
+}
+.hide-sidebar{
+  left: -256px !important;
+}
+
+.animated{
+  transition: .5s;
+}
+
+@media(max-width: 465px) {
+  .show-sidebar{
+    margin-left: 0px;
+  }
+  .display-sidebar{
+    left: 0px !important;
+  }
+  .hide-sidebar{
+    left:256px !important;
+  }
+
+}

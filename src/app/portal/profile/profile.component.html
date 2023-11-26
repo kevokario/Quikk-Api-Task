@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-sm-9 mx-auto">
+    <div class="card rounded-1"  *ngIf="!showEdit">
+      <div class="card-header bg-white">
+        <p class="card-title fw-bold mb-0">
+          My Profile
+        </p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-12 ">
+            <label >Email</label>
+            <p class="fw-bold">{{currentUser?.email}}</p>
+          </div>
+          <div class="col-sm-12">
+            <label >Name</label>
+            <p class="fw-bold">{{currentUser?.name}}</p>
+          </div>
+          <div class="col-sm-12">
+            <label > Phone</label>
+            <p class="fw-bold">{{currentUser?.phone}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-end bg-white">
+          <button (click)="initEdit()" class="btn btn-sm btn-outline-primary">Edit</button>
+      </div>
+    </div>
+
+
+    <div class="card rounded-1 mt-3" *ngIf="showEdit">
+      <div class="card-header bg-white">
+        <p class="card-title fw-bold mb-0">Update my profile </p>
+      </div>
+      <div class="card-body">
+        <div class="row">
+
+          <form [formGroup]="profileForm" (ngSubmit)="updateProfile()" class="col-sm-12">
+            <div class="form-group mb-3">
+              <label for="name">Name </label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-user"></i>
+                </span>
+                <input type="text"
+                       id="name"
+                       placeholder="your names"
+                       class="form-control"
+                       name="name"
+                       formControlName="name"
+                       [ngClass]="{'is-invalid':isSubmitted && control['name'].invalid}">
+              </div>
+              <div class="text-danger" *ngIf="isSubmitted && control['name'].invalid">
+                <div *ngIf="control['name']?.errors?.['required']">Your names are required!</div>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="email">Email </label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <input type="email"
+                       id="email"
+                       class="form-control"
+                       placeholder="Your email"
+                       name="email"
+                       formControlName="email"
+                       [ngClass]="{'is-invalid':isSubmitted && control['email'].invalid}">
+              </div>
+              <div class="text-danger" *ngIf="isSubmitted && control['email'].invalid">
+                <div *ngIf="control['email']?.errors?.['required']">Email is required!</div>
+                <div *ngIf="control['email']?.errors?.['email']">Provide a valid email!</div>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="phone">Phone </label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <input type="text"
+                       id="phone"
+                       class="form-control"
+                       placeholder="07&times;&times; &times;&times;&times; &times;&times;&times;"
+                       name="phone"
+                       formControlName="phone"/>
+              </div>
+
+              <div class="text-danger" *ngIf="isSubmitted && control['phone'].invalid">
+                <div *ngIf="control['phone']?.errors?.['required']">Phone number is required!</div>
+                <div *ngIf="control['phone']?.errors?.['minlength']">Enter a phone number with 10 digits!</div>
+                <div *ngIf="control['phone']?.errors?.['pattern']">Invalid phone number!</div>
+              </div>
+            </div>
+
+            <div class="form-group text-end">
+                <button [disabled]="isSubmitting" type="button" (click)="showEdit = false" class="btn btn-sm btn-outline-primary">Cancel</button>
+                <button [disabled]="isSubmitting" class="btn btn-sm ms-1 btn-primary">Update</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

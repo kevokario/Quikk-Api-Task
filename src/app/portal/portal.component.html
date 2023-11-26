@@ -1,0 +1,29 @@
+<div>
+  <!-- Sidebar section start-->
+  <app-side-bar [title]="title" [showSidebar]="showSidebar" (toggleSidebarEvt)="toggleSidebar()"></app-side-bar>
+  <!-- Sidebar section end-->
+
+  <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+    <!--
+      =============================
+      Header Section
+      ===============================
+    -->
+    <app-header [title]="title" [showSidebar]="showSidebar" (toggleSidebarEvt)="toggleSidebar()"></app-header>
+    <!--
+      ===============================
+        Header Section end
+      ===============================
+    -->
+    <div class="body flex-grow-1 animated px-3" [class]="showSidebar ? 'show-sidebar':''">
+      <div class="container-fluid">
+       <router-outlet></router-outlet>
+      </div>
+    </div>
+    <footer class="footer animated" [class]="showSidebar ? 'show-sidebar':''">
+      <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> © 2023 creativeLabs.</div>
+      <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
+    </footer>
+  </div>
+
+</div>

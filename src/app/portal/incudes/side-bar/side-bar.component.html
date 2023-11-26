@@ -1,0 +1,39 @@
+<div class="sidebar sidebar-dark sidebar-fixed animated"
+     [class]="showSidebar ? 'display-sidebar':'hide-sidebar'" id="sidebar">
+  <div class="sidebar-brand">
+    <div style="height: 46px;" class="d-flex w-100 align-items-center d-flex justify-content-around">
+        <span>
+           <span class="fa-stack">
+           <i class="fa-stack-2x fa-regular fa-square"></i>
+           <i class="fa-stack-1x fa-solid fa-hand-holding-dollar"></i>
+         </span> {{title}}
+        </span>
+      <span (click)="toggleSidebar()" class="p-2 d-sm-inline-block d-md-none">
+          &times;
+        </span>
+    </div>
+  </div>
+  <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/portal/dash']" [routerLinkActive]="['active']">
+        <i class="nav-icon fa-solid fa-calculator"></i> Dashboard
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/portal/deposit']" [routerLinkActive]="['active']">
+        <i class="nav-icon fa-solid fa-calculator"></i> Deposit
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/portal/transact']" [routerLinkActive]="['active']">
+        <i class="nav-icon fa-solid fa-calculator"></i> Send Money
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/portal/transactions']" [routerLinkActive]="['active']">
+        <i class="nav-icon fa-solid fa-calculator"></i> My Transactions
+      </a>
+    </li>
+    <!-- <li class="nav-title">Theme</li> -->
+  </ul>
+</div>

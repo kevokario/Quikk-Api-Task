@@ -84,6 +84,9 @@ export class LoginComponent implements OnInit,OnDestroy {
           //store in localStorage
           localStorage.setItem(environment.userToken,token);
 
+          //update user observable
+          this.userService.setCurrentUser(user);
+
           //redirect to portal
           this.router.navigate(['/portal'])
 
