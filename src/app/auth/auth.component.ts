@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  displayLogin:boolean = false;
+  displayLogin:boolean = true;
   displayPasswordSection:boolean = false;
   appTitle:string = "Quikk Api Money App";
 

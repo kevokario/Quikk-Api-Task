@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {User} from "../models/user";
+import {ToastrService} from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {User} from "../models/user";
 export class UserService {
 
   url:string = environment.url;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private toastr:ToastrService) { }
 
 
 
@@ -35,6 +36,10 @@ export class UserService {
 //add user[register]
   registerUser(user:User):Observable<any> {
     return this.http.post(`${this.url}/users`,user)
+  }
+
+  error(){
+    this.toastr.error("Restart Json Server","An error occurred!")
   }
 
 

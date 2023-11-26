@@ -7,6 +7,7 @@
         <h2 class="app-title">{{appTitle}}</h2>
         <div class="card auth-card">
           <div class="card-body pb-2">
+
             <!-- recover password section-->
             <ng-container *ngIf="displayPasswordSection else loginRegisterSection">
               <app-reset-password>

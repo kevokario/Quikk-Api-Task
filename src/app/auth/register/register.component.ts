@@ -101,7 +101,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
         },
         error:(error)=>{
-          this.toastr.error("Restart Json Server","An error occurred!")
+          this.userService.error();
         },
       }
     )
@@ -120,7 +120,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
         this.registerEvt.emit();
       }),
       error:((error)=>{
-        this.toastr.error("Restart Json Server","An error occurred!")
+       this.userService.error();
       }),
     });
   }
