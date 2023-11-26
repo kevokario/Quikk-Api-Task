@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'ngx-toastr/toastr';
+
 .form-control.is-invalid, .was-validated .form-control:invalid {
   border-color: var(--cui-input-border-color,var(--cui-border-color)) !important;
 }

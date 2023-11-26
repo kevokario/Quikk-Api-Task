@@ -26,7 +26,7 @@
 
               <!-- Register Section -->
               <ng-template #showRegisterUi>
-                <app-register>
+                <app-register (registerEvt)="showLogin()">
                   <span class="app-title-sm">{{appTitle}}</span>
                 </app-register>
               </ng-template>

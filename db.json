@@ -1,5 +1,20 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "Kario Muthoni",
+      "email": "kevokario@gmail.com",
+      "phone": "0704219247",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "name": "Sean kario njeri",
+      "email": "seankario@gmail.com",
+      "phone": "0704219247",
+      "password": "12345",
+      "id": 2
+    }
+  ],
   "accounts": [],
   "transactions": []
 }
