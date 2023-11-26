@@ -100,7 +100,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
           this.registerUser(newUser)
 
         },
-        error:(error)=>{
+        error:()=>{
           this.userService.error();
         },
       }
@@ -115,11 +115,11 @@ export class RegisterComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
         finalize(()=>{this.isRegistering = false;})
       ).subscribe({
-      next:((response)=>{
+      next:(()=>{
         this.toastr.success("Account Created successfully, Login into your new account!","Registration Successful");
         this.registerEvt.emit();
       }),
-      error:((error)=>{
+      error:(()=>{
        this.userService.error();
       }),
     });
