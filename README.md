@@ -1,27 +1,14 @@
 # QuikkApiTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+This project is an assignment part of a skill assesment process for the role Angular Developer at Quikk Api.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+After a fresh install of this project, Run the commands `npm run start` to launch the app. Run the second command `npm run server` to launch the json server  
 
-## Code scaffolding
+## Project Description
+You are building a web platform that can enable users to register and send money to each other within the system. They top up their accounts through  MPESA* and can now transfer amongst themselves. They use the registered number or email address to transfer.  The platform should have a friendly landing page and signup process. The users will use the application mostly on their phones so it should work well on a mobile browser as well as desktop.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Login Credentials
+Register and login
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

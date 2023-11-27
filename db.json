@@ -32,7 +32,7 @@
   "accounts": [
     {
       "userId": 1,
-      "amount": 11040,
+      "amount": 11059,
       "id": 1
     },
     {
@@ -301,6 +301,26 @@
       "time": "2023:11:27 08:01",
       "afterAmount": 5000,
       "id": 25
+    },
+    {
+      "accountId": 1,
+      "amount": 22700,
+      "beforeAmount": 27059,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 09:04",
+      "afterAmount": 4359,
+      "id": 26
+    },
+    {
+      "accountId": 1,
+      "amount": 6700,
+      "beforeAmount": 4359,
+      "action": "Money In",
+      "otherParty": "M-Pesa Equity Mtaani",
+      "time": "2023:11:27 09:05",
+      "afterAmount": 11059,
+      "id": 27
     }
   ]
 }
