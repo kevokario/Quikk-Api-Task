@@ -1,10 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
-import {TransactionService} from "../../services/transaction.service";
 import {environment} from "../../../environments/environment";
 import {User} from "../../models/user";
 import {Account} from "../../models/account";
-import {finalize, Subject, takeUntil} from "rxjs";
+import { Subject, takeUntil} from "rxjs";
 import {AccountService} from "../../services/account.service";
 
 @Component({
