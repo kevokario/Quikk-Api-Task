@@ -14,13 +14,14 @@ export class HeaderComponent implements OnInit,OnDestroy {
 
   destroy$:Subject<boolean> = new Subject<boolean>();
 
-  currentUser:any;
+  currentUser!:User;
 
   @Input() showSidebar = false;
   @Input() title = '';
   @Output() toggleSidebarEvt:EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private userService:UserService, private router:Router) { }
+  constructor(private userService:UserService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.initCurrentUser();

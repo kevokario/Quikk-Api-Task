@@ -1,1 +1,88 @@
-<p>deposit works!</p>
+<div class="row">
+  <div class="col-sm-9 mx-auto">
+    <div class="card rounded-1">
+      <div class="card-header bg-white">
+        <p class="fw-bold mb-0">Deposit to account</p>
+      </div>
+      <div class="card-body">
+
+        <div class="mb-3">
+          <div class="border-start border-start-4 border-start-primary px-3 mb-3">
+            <small class="text-medium-emphasis text-truncate">Current Amount</small>
+            <div class="fs-5 fw-semibold">{{currentUser.accounts?.[0]?.amount |currency :'KSh'}}</div>
+          </div>
+        </div>
+        <form [formGroup]="depositForm" (ngSubmit)="deposit()" >
+
+          <div class="form-group mb-3">
+            <label for="depositFrom">Deposit From </label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fa-solid fa-user"></i>
+              </span>
+              <select
+                name="depositFrom"
+                id="depositFrom"
+                formControlName="source"
+                [ngClass]="{'is-invalid':submitted && control['source'].invalid}"
+                class="form-select">
+                <option value="null">Select Source</option>
+                <option *ngFor="let source of sources">{{source}}</option>
+              </select>
+            </div>
+            <div class="text-danger" *ngIf="submitted && control['source'].invalid">
+              <div *ngIf="control['source'].errors?.['required']">This field is required</div>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="name">Agent Name </label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fa-solid fa-bank"></i>
+              </span>
+              <input
+                name="agent" id="name"
+                type="text" placeholder="agent name"
+                formControlName="agent"
+                [ngClass]="{'is-invalid':submitted && control['agent'].invalid}"
+                class="form-control"/>
+            </div>
+            <div class="text-danger" *ngIf="submitted && control['agent'].invalid">
+              <div *ngIf="control['agent'].errors?.['required']">This field is required</div>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="amount">Amount </label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fa-solid fa-money-bill-wave"></i>
+              </span>
+              <input
+                name="amount" id="amount"
+                type="number"
+                formControlName="amount"
+                [ngClass]="{'is-invalid':submitted && control['amount'].invalid}"
+                placeholder="E.g. 1000" class="form-control"/>
+            </div>
+            <div class="text-danger" *ngIf="submitted && control['amount'].invalid">
+              <div *ngIf="control['amount'].errors?.['required']">This field is required</div>
+              <div *ngIf="control['amount'].errors?.['pattern']">Invalid Amount</div>
+              <div *ngIf="(control['amount'].errors?.['min'] || control['amount'].errors?.['max'])">
+                Amount should be between {{300 | currency :'Ksh' }} - {{300000 | currency:'Ksh'}}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group text-end">
+            <button (click)="resetForm()" class="btn btn-outline-primary me-1" type="button">Clear</button>
+            <button class="btn btn-primary">Deposit</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

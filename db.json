@@ -25,12 +25,12 @@
   "accounts": [
     {
       "userId": 1,
-      "amount": 0,
+      "amount": 26759,
       "id": 1
     },
     {
       "userId": 2,
-      "amount": 0,
+      "amount": 1500,
       "id": 2
     },
     {
@@ -39,5 +39,66 @@
       "id": 3
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "accountId": 1,
+      "amount": 2000,
+      "beforeAmount": 0,
+      "action": "Deposit",
+      "otherParty": "M-Pesa Marvels Agency",
+      "time": "2023:11:27 03:37",
+      "afterAmount": 2000,
+      "id": 1
+    },
+    {
+      "accountId": 1,
+      "amount": 23000,
+      "beforeAmount": 2000,
+      "action": "Deposit",
+      "otherParty": "Bank Equity Mtaani",
+      "time": "2023:11:27 03:37",
+      "afterAmount": 25000,
+      "id": 2
+    },
+    {
+      "accountId": 1,
+      "amount": 1200,
+      "beforeAmount": 25000,
+      "action": "Deposit",
+      "otherParty": "Bank KCB Mtaani",
+      "time": "2023:11:27 03:41",
+      "afterAmount": 26200,
+      "id": 3
+    },
+    {
+      "accountId": 1,
+      "amount": 100,
+      "beforeAmount": 26200,
+      "action": "Deposit",
+      "otherParty": "M-Pesa Naivas Mpesa",
+      "time": "2023:11:27 03:41",
+      "afterAmount": 26300,
+      "id": 4
+    },
+    {
+      "accountId": 1,
+      "amount": 459,
+      "beforeAmount": 26300,
+      "action": "Deposit",
+      "otherParty": "Bank DTB-Naivas",
+      "time": "2023:11:27 03:43",
+      "afterAmount": 26759,
+      "id": 5
+    },
+    {
+      "accountId": 2,
+      "amount": 1500,
+      "beforeAmount": 0,
+      "action": "Deposit",
+      "otherParty": "M-Pesa Equity Mtaani",
+      "time": "2023:11:27 03:44",
+      "afterAmount": 1500,
+      "id": 6
+    }
+  ]
 }

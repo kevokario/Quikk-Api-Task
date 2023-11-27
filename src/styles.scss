@@ -2,6 +2,10 @@
 
 @import 'ngx-toastr/toastr';
 
-.form-control.is-invalid, .was-validated .form-control:invalid {
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+
+.form-select.is-invalid,
+.was-validated .form-select:invalid{
   border-color: var(--cui-input-border-color,var(--cui-border-color)) !important;
 }
