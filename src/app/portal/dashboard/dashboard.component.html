@@ -9,7 +9,7 @@
           <i class="fa-solid fa-2x fa-coins"></i>
         </div>
         <div>
-          <div class="fs-6 fw-semibold text-primary">{{10000 | currency : 'Ksh'}}</div>
+          <div class="fs-6 fw-semibold text-primary">{{currentUser.accounts?.[0]?.amount |currency :'KSh'}}</div>
           <div class="text-medium-emphasis text-uppercase fw-semibold small">My Balance</div>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <i class="fa-solid fa-2x fa-money-bill-trend-up"></i>
         </div>
         <div>
-          <div class="fs-6 fw-semibold text-info">{{300 | currency : 'Ksh'}}</div>
+          <div class="fs-6 fw-semibold text-info">{{moneyOut | currency : 'Ksh'}}</div>
           <div class="text-medium-emphasis text-uppercase fw-semibold small">Money Out</div>
         </div>
       </div>
@@ -37,7 +37,7 @@
           <i class="fa-solid fa-2x fa-sack-dollar"></i>
         </div>
         <div>
-          <div class="fs-6 fw-semibold text-warning">{{10000 | currency : 'Ksh'}}</div>
+          <div class="fs-6 fw-semibold text-warning">{{moneyIn | currency : 'Ksh'}}</div>
           <div class="text-medium-emphasis text-uppercase fw-semibold small">Money In</div>
         </div>
       </div>
@@ -65,59 +65,53 @@
   <div class="col-md-12">
     <div class="card my-4">
       <div class="card-header">Transactions last 30 days</div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table border mb-0">
-            <thead class="table-light fw-semibold">
-            <tr class="align-middle">
-              <th>Time</th>
-              <th>Action</th>
-              <th>Other Party</th>
-              <th>Before Amount</th>
-              <th>After Amount</th>
-              <th>Amount</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="align-middle">
-              <td>November 23 2023 - 12:00am</td>
-              <td>
-                Send Money <i class="fa-solid ms-2 fa-square-caret-down text-danger"></i>
-              </td>
-              <td>
-                Samuel Joe
-              </td>
-              <td>
-                {{2300 | currency : 'Ksh'}}
-              </td>
-              <td>
-                {{2000 | currency : 'Ksh'}}
-              </td>
-              <td>
-                {{300 | currency : 'Ksh'}}
-              </td>
-            </tr>
-            <tr class="align-middle">
-              <td>November 23 2023 - 12:00am</td>
-              <td>
-                Deposit Money <i class="fa-solid ms-2 fa-square-caret-up text-success"></i>
-              </td>
-              <td>
-                Samuel Joe Agency
-              </td>
-              <td>
-                {{2000 | currency : 'Ksh'}}
-              </td>
-              <td>
-                {{12000 | currency : 'Ksh'}}
-              </td>
-              <td>
-                {{10000 | currency : 'Ksh'}}
-              </td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card-body" >
+        <ng-container *ngIf="(userAccount?.transactions?.length===0) else showData">
+          <p class="mb-0">There are no recent transactions...</p>
+        </ng-container>
+        <ng-template #showData>
+          <div class="table-responsive">
+            <table class="table border mb-0">
+              <thead class="table-light fw-semibold">
+              <tr class="align-middle">
+                <th>Time</th>
+                <th>Action</th>
+                <th>Other Party</th>
+                <th>Before Amount</th>
+                <th>After Amount</th>
+                <th>Amount</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let transaction of userAccount.transactions" class="align-middle">
+                <td>
+                  {{transaction.time}}
+                </td>
+                <td>
+                  {{transaction.action}}
+                  <i
+                    class="fa-solid ms-2"
+                    [ngClass]="{ 'fa-turn-up text-danger':transaction.action=='Money Out','fa-turn-down text-success':transaction.action=='Money In'
+                  }"
+                  ></i>
+                </td>
+                <td>
+                  {{transaction.otherParty}}
+                </td>
+                <td>
+                  {{transaction.beforeAmount | currency : 'Ksh'}}
+                </td>
+                <td>
+                  {{transaction.afterAmount | currency : 'Ksh'}}
+                </td>
+                <td>
+                  {{transaction.amount | currency : 'Ksh'}}
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

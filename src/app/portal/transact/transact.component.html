@@ -1,1 +1,68 @@
-<p>transact works!</p>
+<div class="row">
+  <div class="col-sm-9 mx-auto">
+    <div class="card rounded-1">
+      <div class="card-header bg-white">
+        <p class="fw-bold mb-0">Send Money </p>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <div class="border-start border-start-4 border-start-primary px-3 mb-3"><small
+            class="text-medium-emphasis text-truncate">Current Balance </small>
+            <div class="fs-5 fw-semibold">{{currentUser.accounts?.[0]?.amount |currency :'KSh'}}</div>
+          </div>
+        </div>
+
+
+        <form [formGroup]="transactForm" (ngSubmit)="sendMoney()">
+          <div class="form-group mb-3">
+            <label for="recipient">Send to </label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fa-solid fa-user"></i>
+              </span>
+              <select formControlName="recipient"
+                      name="recipient"
+                      id="recipient"
+                      class="form-select"
+                      [ngClass]="{'is-invalid':submitted && control['recipient'].invalid}"
+              >
+                <option value="null">Select Recipient</option>
+                <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+              </select>
+            </div>
+            <div class="text-danger" *ngIf="submitted && control['recipient'].invalid">
+              <div *ngIf="control['recipient'].errors?.['required']">Select a recipient</div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="amount">Amount</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+              </span>
+              <input name="amount"
+                     formControlName="amount"
+                     type="number" id="amount"
+                     placeholder="Enter Amount"
+                     class="form-control"
+                     [ngClass]="{'is-invalid':submitted && control['amount'].invalid}"
+              />
+            </div>
+            <div class="text-danger" *ngIf="submitted && control['amount'].invalid">
+              <div *ngIf="control['amount'].errors?.['required']">This field is required</div>
+              <div *ngIf="control['amount'].errors?.['pattern']">Invalid Amount</div>
+              <div *ngIf="(control['amount'].errors?.['min'] || control['amount'].errors?.['max'])">
+                Amount should be between {{300 | currency :'Ksh' }} - {{currentUser.accounts?.[0]?.amount |currency :'KSh' }}
+              </div>
+            </div>
+          </div>
+
+          <div class="text-end">
+            <button (click)="resetForm()" class="btn btn-outline-primary me-1" type="button">Clear</button>
+            <button class="btn btn-primary">Send </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -110,9 +110,9 @@ export class DepositComponent implements OnInit,OnDestroy {
       accountId:account.id,
       amount:formData.amount,
       beforeAmount:this.currentUser.accounts?.[0]?.amount || 0,
-      action:"Deposit",
+      action:"Money In",
       otherParty:formData.source+' '+formData.agent,
-      time:this.getCurrentDateTime(),
+      time:this.accountService.getCurrentDateTime(),
       afterAmount:account.amount
     }
 
@@ -145,16 +145,6 @@ export class DepositComponent implements OnInit,OnDestroy {
     }
   }
 
-  getCurrentDateTime() {
-    const now = new Date();
 
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const date = String(now.getDate()).padStart(2, '0');
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-
-    return `${year}:${month}:${date} ${hours}:${minutes}`;
-  }
 
 }

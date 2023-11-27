@@ -20,6 +20,16 @@ export class UserService {
     params.append('email',email);
     return this.http.get<Array<User>>(`${this.url}?${ params.toString() }`);
   }
+  getUserByid(userId:number):Observable<User>{
+    const params:URLSearchParams  = new URLSearchParams();
+    params.append('_embed','accounts');
+    return this.http.get<User>(`${this.url}/${userId}?${ params.toString() }`);
+  }
+  getRecipients(userId:number):Observable<Array<User>>{
+    const params:URLSearchParams  = new URLSearchParams();
+    params.append('id_ne',userId.toString());
+    return this.http.get<Array<User>>(`${this.url}?${ params.toString() }`);
+  }
   checkEmailExitsForUser(email:string,userId:number):Observable<Array<User>>{
     const params:URLSearchParams  = new URLSearchParams();
     params.append('email',email);

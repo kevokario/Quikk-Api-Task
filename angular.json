@@ -38,8 +38,7 @@
             "scripts": [
               "src/assets/js/coreui.bundle.min.js",
               "src/assets/vendors/simplebar/js/simplebar.min.js",
-              "src/assets/vendors/@coreui/utils/js/coreui-utils.js",
-              "src/assets/js/main.js"
+              "src/assets/vendors/@coreui/utils/js/coreui-utils.js"
             ]
           },
           "configurations": {

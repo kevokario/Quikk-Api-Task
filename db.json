@@ -20,23 +20,35 @@
       "phone": "0704219247",
       "password": "12345",
       "id": 3
+    },
+    {
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "phone": "0704219247",
+      "password": "12345",
+      "id": 4
     }
   ],
   "accounts": [
     {
       "userId": 1,
-      "amount": 26759,
+      "amount": 11040,
       "id": 1
     },
     {
       "userId": 2,
-      "amount": 1500,
+      "amount": 13500,
       "id": 2
     },
     {
       "userId": 3,
       "amount": 0,
       "id": 3
+    },
+    {
+      "userId": 4,
+      "amount": 5000,
+      "id": 4
     }
   ],
   "transactions": [
@@ -44,7 +56,7 @@
       "accountId": 1,
       "amount": 2000,
       "beforeAmount": 0,
-      "action": "Deposit",
+      "action": "Money In",
       "otherParty": "M-Pesa Marvels Agency",
       "time": "2023:11:27 03:37",
       "afterAmount": 2000,
@@ -54,7 +66,7 @@
       "accountId": 1,
       "amount": 23000,
       "beforeAmount": 2000,
-      "action": "Deposit",
+      "action": "Money In",
       "otherParty": "Bank Equity Mtaani",
       "time": "2023:11:27 03:37",
       "afterAmount": 25000,
@@ -64,7 +76,7 @@
       "accountId": 1,
       "amount": 1200,
       "beforeAmount": 25000,
-      "action": "Deposit",
+      "action": "Money In",
       "otherParty": "Bank KCB Mtaani",
       "time": "2023:11:27 03:41",
       "afterAmount": 26200,
@@ -74,7 +86,7 @@
       "accountId": 1,
       "amount": 100,
       "beforeAmount": 26200,
-      "action": "Deposit",
+      "action": "Money In",
       "otherParty": "M-Pesa Naivas Mpesa",
       "time": "2023:11:27 03:41",
       "afterAmount": 26300,
@@ -84,7 +96,7 @@
       "accountId": 1,
       "amount": 459,
       "beforeAmount": 26300,
-      "action": "Deposit",
+      "action": "Money In",
       "otherParty": "Bank DTB-Naivas",
       "time": "2023:11:27 03:43",
       "afterAmount": 26759,
@@ -94,11 +106,201 @@
       "accountId": 2,
       "amount": 1500,
       "beforeAmount": 0,
-      "action": "Deposit",
+      "action": "Money In",
       "otherParty": "M-Pesa Equity Mtaani",
       "time": "2023:11:27 03:44",
       "afterAmount": 1500,
       "id": 6
+    },
+    {
+      "accountId": 2,
+      "amount": 1200,
+      "beforeAmount": 1500,
+      "action": "Money In",
+      "otherParty": "M-Pesa Equity Mtaani",
+      "time": "2023:11:27 03:55",
+      "afterAmount": 2700,
+      "id": 7
+    },
+    {
+      "accountId": 2,
+      "amount": 600,
+      "beforeAmount": 2700,
+      "action": "Money In",
+      "otherParty": "M-Pesa Equity Mtaani",
+      "time": "2023:11:27 05:37",
+      "afterAmount": 3300,
+      "id": 8
+    },
+    {
+      "accountId": 1,
+      "amount": 300,
+      "beforeAmount": 26759,
+      "action": "Money In",
+      "otherParty": "Bank Equity Mtaani",
+      "time": "2023:11:27 06:14",
+      "afterAmount": 27059,
+      "id": 9
+    },
+    {
+      "accountId": 2,
+      "amount": 200,
+      "beforeAmount": 3300,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 07:12",
+      "afterAmount": 3100,
+      "id": 10
+    },
+    {
+      "accountId": 1,
+      "amount": 200,
+      "beforeAmount": 3100,
+      "action": "Money In",
+      "otherParty": "Sean kario Njeri - 0704219247",
+      "time": "2023:11:27 07:12",
+      "afterAmount": 27259,
+      "id": 11
+    },
+    {
+      "accountId": 2,
+      "amount": 100,
+      "beforeAmount": 3100,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 07:13",
+      "afterAmount": 3000,
+      "id": 12
+    },
+    {
+      "accountId": 1,
+      "amount": 100,
+      "beforeAmount": 3000,
+      "action": "Money In",
+      "otherParty": "Sean kario Njeri - 0704219247",
+      "time": "2023:11:27 07:13",
+      "afterAmount": 27359,
+      "id": 13
+    },
+    {
+      "accountId": 1,
+      "amount": 7359,
+      "beforeAmount": 27359,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 07:14",
+      "afterAmount": 20000,
+      "id": 14
+    },
+    {
+      "accountId": 3,
+      "amount": 7359,
+      "beforeAmount": 27359,
+      "action": "Money In",
+      "otherParty": "Kario Muthoni - 0704219247",
+      "time": "2023:11:27 07:14",
+      "afterAmount": 7359,
+      "id": 15
+    },
+    {
+      "accountId": 1,
+      "amount": 7000,
+      "beforeAmount": 20000,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 07:14",
+      "afterAmount": 13000,
+      "id": 16
+    },
+    {
+      "accountId": 2,
+      "amount": 7000,
+      "beforeAmount": 3000,
+      "action": "Money In",
+      "otherParty": "M-Pesa Marvels Agency",
+      "time": "2023:11:27 07:16",
+      "afterAmount": 10000,
+      "id": 17
+    },
+    {
+      "accountId": 2,
+      "amount": 2000,
+      "beforeAmount": 10000,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 07:16",
+      "afterAmount": 8000,
+      "id": 18
+    },
+    {
+      "accountId": 1,
+      "amount": 2000,
+      "beforeAmount": 8000,
+      "action": "Money In",
+      "otherParty": "Sean kario Njeri - 0704219247",
+      "time": "2023:11:27 07:16",
+      "afterAmount": 15000,
+      "id": 19
+    },
+    {
+      "accountId": 1,
+      "amount": 5000,
+      "beforeAmount": 15000,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 07:16",
+      "afterAmount": 10000,
+      "id": 20
+    },
+    {
+      "accountId": 2,
+      "amount": 5000,
+      "beforeAmount": 15000,
+      "action": "Money In",
+      "otherParty": "Kario Muthoni - 0704219247",
+      "time": "2023:11:27 07:16",
+      "afterAmount": 13000,
+      "id": 21
+    },
+    {
+      "accountId": 1,
+      "amount": 1540,
+      "beforeAmount": 10000,
+      "action": "Money In",
+      "otherParty": "Bank Equity Mtaani",
+      "time": "2023:11:27 07:24",
+      "afterAmount": 11540,
+      "id": 22
+    },
+    {
+      "accountId": 1,
+      "amount": 500,
+      "beforeAmount": 11540,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:27 07:40",
+      "afterAmount": 11040,
+      "id": 23
+    },
+    {
+      "accountId": 2,
+      "amount": 500,
+      "beforeAmount": 11540,
+      "action": "Money In",
+      "otherParty": "Kario Muthoni - 0704219247",
+      "time": "2023:11:27 07:40",
+      "afterAmount": 13500,
+      "id": 24
+    },
+    {
+      "accountId": 4,
+      "amount": 5000,
+      "beforeAmount": 0,
+      "action": "Money In",
+      "otherParty": "Bank Equity Mtaani",
+      "time": "2023:11:27 08:01",
+      "afterAmount": 5000,
+      "id": 25
     }
   ]
 }
