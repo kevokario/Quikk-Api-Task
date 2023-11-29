@@ -27,12 +27,19 @@
       "phone": "0704219247",
       "password": "12345",
       "id": 4
+    },
+    {
+      "name": "Ann Ngure",
+      "email": "wanjiruann655@gmail.com",
+      "phone": "0743923805",
+      "password": "12345",
+      "id": 5
     }
   ],
   "accounts": [
     {
       "userId": 1,
-      "amount": 11059,
+      "amount": 16059,
       "id": 1
     },
     {
@@ -49,6 +56,11 @@
       "userId": 4,
       "amount": 5000,
       "id": 4
+    },
+    {
+      "userId": 5,
+      "amount": 150000,
+      "id": 5
     }
   ],
   "transactions": [
@@ -277,7 +289,7 @@
       "amount": 500,
       "beforeAmount": 11540,
       "action": "Money Out",
-      "otherParty": "undefined undefined",
+      "otherParty": "Annabello Sanchez",
       "time": "2023:11:27 07:40",
       "afterAmount": 11040,
       "id": 23
@@ -321,6 +333,36 @@
       "time": "2023:11:27 09:05",
       "afterAmount": 11059,
       "id": 27
+    },
+    {
+      "accountId": 1,
+      "amount": 5000,
+      "beforeAmount": 11059,
+      "action": "Money In",
+      "otherParty": "M-Pesa Equity Mtaani",
+      "time": "2023:11:28 10:51",
+      "afterAmount": 16059,
+      "id": 28
+    },
+    {
+      "accountId": 5,
+      "amount": 250000,
+      "beforeAmount": 0,
+      "action": "Money In",
+      "otherParty": "M-Pesa Marvels Agency",
+      "time": "2023:11:28 10:59",
+      "afterAmount": 250000,
+      "id": 29
+    },
+    {
+      "accountId": 5,
+      "amount": 100000,
+      "beforeAmount": 250000,
+      "action": "Money Out",
+      "otherParty": "undefined undefined",
+      "time": "2023:11:28 11:02",
+      "afterAmount": 150000,
+      "id": 30
     }
   ]
 }

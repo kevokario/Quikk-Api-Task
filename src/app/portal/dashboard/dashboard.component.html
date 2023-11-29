@@ -83,7 +83,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let transaction of userAccount.transactions" class="align-middle">
+              <tr *ngFor="let transaction of userAccount.transactions?.reverse()" class="align-middle">
                 <td>
                   {{transaction.time}}
                 </td>
