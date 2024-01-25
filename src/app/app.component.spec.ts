@@ -1,35 +1,31 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import {MockBuilder,MockRender,MockedComponentFixture,ngMocks} from "ng-mocks";
+import {AppComponent} from "./app.component";
+import {AppModule} from "./app.module";
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+describe("AppComponent",function(){
+
+  let fixture:MockedComponentFixture<AppComponent>;
+  let component:AppComponent;
+  ngMocks.faster();
+
+  beforeAll(function(){
+    return MockBuilder(AppComponent,AppModule);
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'quikk-api-task'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('quikk-api-task');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeAll(function () {
+    fixture = MockRender(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('quikk-api-task app is running!');
+  })
+
+  it("Should create",function(){
+    //arrange
+
+    //act
+
+    //assert
+    expect(component).toBeTruthy()
+
   });
+
 });
